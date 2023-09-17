@@ -1,0 +1,392 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Libre Baskerville', serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root{
+    --red: #ff0000;
+    --background: #faebd7;
+    --on-white-p: #808080;
+    --on-antique-p: #444444;
+}
+
+header{
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.301),rgba(0, 0, 0, 0.301)),url(./images/banner.webp);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.logo{
+    width: clamp(180px, 30%, 250px);
+    height: auto;
+    margin: 0.7em;
+}
+
+nav{
+    z-index: 1;
+    position: relative;
+}
+
+nav ul{
+    float: right;
+    list-style: none;
+    margin: 1.8em 3.5em;
+    display: flex;
+    gap: 1.8em;
+}
+
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    flex-shrink: 1;
+}
+
+nav ul li a::after{
+    content: "";
+    width: 0%;
+    height: 2.7px;
+    background-color: var(--red);
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after,  a.active::after{
+    width: 100%;
+}
+nav ul li a:active{
+    color: rgb(248, 99, 99);
+}
+
+.checkbtn{
+    position: absolute;
+    right: 2rem;
+    top: 1.5rem;
+    color: white;
+    font-size: 1.4rem;
+    display: none;
+    cursor: pointer;
+}
+#check{
+    display: none;
+}
+
+.title{
+    display: block;
+    width: 80%;
+    text-align: center;
+    padding: 50px;
+
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+.title h1{
+    font-size: 2.5rem;
+    color: rgb(255, 255, 255);
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+.title p{
+    color: rgb(233, 233, 233);
+    line-height: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.title .visit-btn, .cta .enroll{
+    display: inline-block;
+    width: 100px;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color:var(--red);
+    border: 2px solid #e20c0c;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.title .visit-btn:hover, .cta .enroll:hover{
+    /* color:#FF0000; */
+    background-color: rgba(255, 0, 0, 0.212);
+}
+/* ----------Courses-------------- */
+.sections{
+    margin: auto;
+    width: 85%;
+    text-align: center;
+    padding-top: 4rem;
+}
+
+.sections h2{
+    color:var(--red);
+    font-size: 2rem;
+}
+
+.sections>p{
+    color: var(--on-white-p);
+    margin: 5px;
+}
+
+.course-container{
+    display: flex;
+    margin-top: 3rem;
+    gap: 20px;
+}
+
+.course-col{
+    background-color:var(--background);
+    padding: 20px;
+    border-radius: 10px;
+    flex-basis: 32%;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.course-col:hover{
+    box-shadow: 0 0 15px rgb(138, 138, 138);
+}
+.course-col h3{
+    padding: 0px 5px 10px 5px;
+}
+
+.course-col p{
+    color: var(--on-antique-p);
+}
+/* --------------------Campuses--------------------------- */
+
+.campus-container{
+    margin-top: 3rem;
+    display: flex;
+    gap: 20px;
+}
+
+.campus-col{
+    flex-basis: 32%;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+
+}
+
+.campus-col img{
+    width: 100%;
+    height: 100%;
+}
+.layer{
+    background-color:transparent;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    transition: 0.5s;
+}
+.layer:hover{
+    background-color: rgba(255, 0, 0, 0.451);
+}
+
+.layer h3{
+    color:white;
+    width: 100%;
+    position: absolute;
+    top: 85%;
+    transition: 0.5s;
+    font-size: 1.5rem;
+}
+
+.layer:hover h3{
+    top: 49%;
+}
+/* -----------------facilities------------------ */
+.facility-container{
+    margin-top: 3rem;
+    display: flex;
+    gap: 20px;
+}
+
+.facility-col{
+    flex-basis: 32%;
+    /* overflow: hidden; */
+    border-radius: 10px;
+}
+
+.facility-col img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    
+}
+.facility-col h3{
+    font-size: 1.2rem;
+    padding: 0.5rem;
+}
+
+.facility-col p{
+    color: var(--on-white-p);
+    text-align: center;
+}
+
+/* -----------Testimonials------------------ */
+.testimonial-container{
+    margin: 3rem 0 4rem 0;
+    display: flex;
+    gap: 20px;
+
+}
+.testimonial-col{
+    flex-basis: 48%;
+    background-color: var(--background);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+}
+.testimonial-col img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.testimonial-col span{
+    display: inline-block;
+    padding-bottom: 5px;
+    font-weight: 650;
+}
+.testimonial-col p{
+    color: var(--on-antique-p);
+}
+.rating{
+    margin-top: 10px;
+    color: rgb(241, 207, 8);
+}
+/* ------------------Call To Action------------------- */
+.cta{
+    color: white;
+    background:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(./images/banner2.webp) no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    padding: 8%;
+}
+.cta h2{
+    color: white;
+    margin-bottom: 2rem;
+}
+/* -----------------------Footer---------------- */
+footer{
+    background-color: var(--background);
+    margin-top: 4rem;
+    text-align: center;
+    padding-bottom: 0.5rem;
+}
+
+.footer{
+    padding: 3rem 10rem 1rem 10rem;
+}
+
+.footer h2{
+    /* color: #FF0000; */
+    padding-bottom: 1.5rem ;display: block;
+    font-size: 2rem;
+}
+
+.footer p{
+    color: var(--on-antique-p);
+}
+.icons{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.icons i{
+    font-size: 1.5rem;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.icons i:hover{
+    color: var(--red);
+}
+
+@media(max-width: 767px){
+    .title{
+        width: 95%;
+        z-index: 0;
+    }
+    .title h1{
+        font-size: 1.5rem;
+        font-weight: 750;
+    }
+    .title p{
+        font-size: 1rem;
+    }
+    .course-container, .campus-container, .facility-container,.testimonial-container{
+        flex-direction: column;
+    }
+    
+    .campus-col{
+        max-height: 300px;
+    }
+    .testimonial-col img {
+        margin-right: 10px;
+    }
+    .footer {
+        padding: 2rem 3rem 1rem 3rem;
+    }
+    .cta h2 , .footer h2{
+        font-size: 1.5rem;
+        
+    }
+    .sections h2{
+        font-size: 1.5rem;
+    }
+
+    nav{
+        z-index: 1;
+    }
+    .checkbtn{
+        display: block;
+    }
+
+    nav ul{
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        position: fixed;
+        top: 80px;
+        left: -200%;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 0;
+        background-color:rgba(255, 0, 0, 0.918);
+        padding-top: 100px;
+        gap: 3rem;
+        transition: 0.5s;
+    }
+
+    nav ul li a::after{
+        content: none;
+    }
+
+    nav ul li a:hover{
+        color: rgb(255, 225, 123);
+    }
+
+    #check:checked ~ ul {
+        left: 0;
+      }
+}
